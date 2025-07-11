@@ -6,7 +6,7 @@ WORKDIR /src
 COPY . .
 
 # Publish the application
-RUN dotnet publish "FIrstApplication/FIrstApplication.csproj" -c Release -o /app/publish
+RUN dotnet publish "EFCF/EFCF.csproj" -c Release -o /app/publish
 
 # Stage 2: Run the application
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
@@ -16,4 +16,4 @@ WORKDIR /app
 COPY --from=build /app/publish .
 
 # Run the app
-ENTRYPOINT ["dotnet", "FIrstApplication.dll"]
+ENTRYPOINT ["dotnet", "EFCF.dll"]
